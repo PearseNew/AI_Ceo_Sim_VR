@@ -5,24 +5,22 @@ public class Gun : MonoBehaviour
 {
     public bool inChamber = false;
     public GameObject projectile;
-    private float projectileMag = 1000f;    
+    private float projectileMag = 750f;    
     public GameObject barrel;
     public void Reload(GameObject projectileClone)
     {
         Projectile projectileScript = projectileClone.GetComponent<Projectile>();
-        
-        if(!(inChamber) && !(projectileScript.isFiring))
+
+        if (!(inChamber) && !(projectileScript.isFiring))
         {
-            inChamber =true;
+            inChamber = true;
             Debug.Log("reloaded");
             Destroy(projectileClone);
         }
-
     }
 
    public void Shoot()
     {
-        Debug.Log("being called");
         if (inChamber)
         {
             GameObject projectileClone = Instantiate(projectile,barrel.transform.position,barrel.transform.rotation);
