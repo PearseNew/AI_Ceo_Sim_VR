@@ -5,14 +5,15 @@ TagManager:
   serializedVersion: 3
   tags:
   - Sneak
+  - Projectile
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Tools
   - Water
   - UI
-  - 
+  - Projectile
   - 
   - 
   - 
