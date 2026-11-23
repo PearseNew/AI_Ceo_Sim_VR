@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Sneak
   - Projectile
+  - Computer
+  - GPU
+  - RAM
   layers:
   - Default
   - TransparentFX
