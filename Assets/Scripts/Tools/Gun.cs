@@ -5,7 +5,7 @@ public class Gun : MonoBehaviour
 {
     public bool inChamber = false;
     public GameObject projectile;
-    private float projectileMag = 750f;    
+    private float projectileMag = 350f;    
     public GameObject barrel;
     public void Reload(GameObject projectileClone)
     {

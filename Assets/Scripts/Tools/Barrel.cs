@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Barrel : MonoBehaviour
 {
-
+    public AudioSource reloadSfx;
     public GameObject gun;
     private Gun gunScript;
     void Start()
@@ -14,7 +14,9 @@ public class Barrel : MonoBehaviour
     {
         if (other.CompareTag("Projectile"))
         {
+            reloadSfx.Play();
             gunScript.Reload(other.gameObject);
+            
         }
     }
 }

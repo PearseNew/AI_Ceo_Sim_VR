@@ -1,18 +1,19 @@
 using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Locomotion.Teleportation;
 
 public class Main : MonoBehaviour
 {
     public GameObject player;
-    public GameObject [] Spawns;
+    public GameObject[] Spawns;
     public GameObject computerSpawns;
     public GameObject ammoSpawns;
-    int GpuLimit;
-    int RamLimit;
-    int ammoLimit;
+    private int GpuLimit;
+    private int RamLimit;
+    private int ammoLimit;
     public bool play;
-
+    public UIManager manager;
     public GameObject gpuClone;
     public GameObject ramClone;
     public GameObject ammoClone;
@@ -27,8 +28,8 @@ public class Main : MonoBehaviour
 
     void Start()
     {
-        GpuLimit = 5;
-        RamLimit = 5;
+        GpuLimit = 8;
+        RamLimit = 8;
         ammoLimit = 3;
         play = false;
     }
@@ -36,6 +37,7 @@ public class Main : MonoBehaviour
     public void ClearGame()
     {
         player.transform.position = Spawns[1].transform.position;
+        manager.SetText();
     }
     public void restartGame()
     {
@@ -44,7 +46,7 @@ public class Main : MonoBehaviour
     public void startGame()
     {
         play = true;
-        player.transform.position = Spawns[0].transform.position;
+        
     }
     void Update()
     {
